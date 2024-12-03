@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="650.0" styleClass="Recommended" stylesheets="@css/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodcw.Recommendation">
+    <Label layoutX="221.0" layoutY="14.0" prefHeight="77.0" prefWidth="218.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Recommended Articles" textFill="WHITE">
+        <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+        </font>
+    </Label>
+    <HBox alignment="CENTER" layoutX="109.0" layoutY="447.0" spacing="10" />
+    <Label fx:id="articleTitle" layoutX="22.0" layoutY="131.0" prefHeight="19.0" prefWidth="593.0" style="-fx-font-size: 16px; font-weight: bold;" textFill="WHITE" />
+    <TextArea fx:id="articleDescription" editable="false" layoutX="27.0" layoutY="391.0" prefHeight="103.0" prefWidth="605.0" wrapText="true" />
+    <ImageView fx:id="articleImage" fitHeight="200.0" fitWidth="250.0" layoutX="193.0" layoutY="179.0" />
+
+    <Button fx:id="homeButton" layoutX="290.0" layoutY="528.0" onAction="#goToHome" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: black;" text="Home" textFill="WHITE">
+        <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+        </font>
+    </Button>
+    <Button fx:id="LikeButton" layoutX="154.0" layoutY="528.0" minHeight="30.0" minWidth="80.0" onAction="#handleLike" style="-fx-background-color: black;" text="Like" textFill="WHITE">
+        <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+        </font>
+    </Button>
+    <Button fx:id="SkipButton" layoutX="426.0" layoutY="528.0" minWidth="80.0" onAction="#handleSkip" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: black;" text="Skip" textFill="WHITE">
+        <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+        </font>
+    </Button>
+</AnchorPane>

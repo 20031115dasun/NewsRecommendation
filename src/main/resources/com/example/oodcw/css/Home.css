@@ -1,0 +1,72 @@
+.homeAnchorPane {
+    -fx-background-image: url("12.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+    
+}
+
+.loginmain{
+    -fx-background-image: url("5.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+.registermain{
+    -fx-background-image: url("4.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+.recommendmain{
+    -fx-background-image: url("1.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+.Articles{
+    -fx-background-image: url("13.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+.Dashboard{
+    -fx-background-image: url("14.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+.Profile{
+    -fx-background-image: url("1.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+.Recommended{
+    -fx-background-image: url("7.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
