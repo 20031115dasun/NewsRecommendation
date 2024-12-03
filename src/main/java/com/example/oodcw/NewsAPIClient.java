@@ -20,7 +20,6 @@ public class NewsAPIClient {
             // Make the API request
             String response = Request.get(url).execute().returnContent().asString();
 
-            // Parse the JSON response
             JSONObject jsonResponse = new JSONObject(response);
 
             // Check if the status is OK
