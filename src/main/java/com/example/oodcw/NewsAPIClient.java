@@ -3,6 +3,8 @@ package com.example.oodcw;
 import org.apache.hc.client5.http.fluent.Request;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 public class NewsAPIClient {
     private static final String API_KEY = "25845b361b4e4c82b398da76fa94e4e7";
     private static final String BASE_URL = "https://newsapi.org/v2/top-headlines";
+    private static final Logger logger = LoggerFactory.getLogger(NewsAPIClient.class);
 
     // Fetch articles based on the category
     public static List<Article> fetchArticlesByCategory(String category) {
@@ -42,11 +45,10 @@ public class NewsAPIClient {
                     articles.add(article);
                 }
             } else {
-                System.err.println("API Error: " + jsonResponse.optString("message"));
+                logger.error("API Error: {}", jsonResponse.optString("message"));
             }
         } catch (Exception e) {
-            System.err.println("Error fetching articles for category: " + category);
-            e.printStackTrace();
+            logger.error("Error fetching articles for category: {}", category, e);
         }
 
         return articles;

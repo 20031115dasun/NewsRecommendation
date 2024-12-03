@@ -6,6 +6,7 @@ module com.example.oodcw {
     requires org.json;
     requires org.apache.httpcomponents.client5.httpclient5.fluent;
     requires jbcrypt;
+    requires org.slf4j;
 
 
     opens com.example.oodcw to javafx.fxml;
