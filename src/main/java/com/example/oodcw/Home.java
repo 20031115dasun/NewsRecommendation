@@ -40,6 +40,11 @@ public class Home {
         loadNewScene("Registration.fxml", event);
     }
 
+    public void handleAdminLogin(ActionEvent event) {
+        loadNewScene("AdminLogin.fxml", event);
+    }
+
+
     // Load recommendations based on user preferences on Login or Registration success
     public void loadRecommendationsOnLogin() {
         // Assuming preferences are updated after successful login/registration

@@ -22,5 +22,10 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Button fx:id="Admin" layoutX="152.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleAdminLogin" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Admin">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
