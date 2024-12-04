@@ -49,6 +49,13 @@ public class Registration {
     @FXML
     private Hyperlink AccountLink;
 
+    // Flag to track if the user came from the AdminDashboard
+    private boolean isAdminContext = false;
+
+    public void setAdminContext(boolean isAdminContext) {
+        this.isAdminContext = isAdminContext;
+    }
+
     @FXML
     private void initialize() {
         registerButton.setOnAction(event -> handleRegistration());
@@ -99,23 +106,37 @@ public class Registration {
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Registration Successful");
             successAlert.setHeaderText(null);
-            successAlert.setContentText("You have successfully registered! Please log in.");
+            successAlert.setContentText("User added successfully!");
 
             successAlert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
-                    openLoginWindow();
-                    closeCurrentWindow();
+                    if (isAdminContext) {
+                        navigateToAdminDashboard();
+                    } else {
+                        openLoginWindow();
+                    }
                 }
             });
-
         } else {
             showAlert("Error", "Failed to register. Please try again.");
         }
     }
 
-    private void closeCurrentWindow() {
-        Stage currentStage = (Stage) registerButton.getScene().getWindow();
-        currentStage.close();
+    private void navigateToAdminDashboard() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminDashboard.fxml"));
+            Stage currentStage = (Stage) registerButton.getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            currentStage.setScene(scene);
+
+            // Refresh the AdminDashboard after adding the user
+            AdminDashboard controller = loader.getController();
+            controller.populateUserTable();
+            controller.showAlert("Success", "User added successfully!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("Error", "Unable to navigate back to Admin Dashboard.");
+        }
     }
 
     private String getSelectedPreferences() {

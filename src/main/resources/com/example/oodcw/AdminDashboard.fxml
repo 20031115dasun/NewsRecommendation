@@ -4,19 +4,16 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.TableCell?>
-<?import javafx.scene.control.TableColumn.CellDataFeatures?>
-<?import javafx.util.Callback?>
 
-<AnchorPane prefHeight="370.0" prefWidth="442.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.oodcw.AdminDashboard">
-    <TableView fx:id="userTable" layoutX="10.0" layoutY="10.0" prefHeight="300.0" prefWidth="424.0">
+<AnchorPane fx:id="adminlogin" prefHeight="522.0" prefWidth="712.0" styleClass="admindashboard" stylesheets="@css/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodcw.AdminDashboard">
+    <TableView fx:id="userTable" layoutX="138.0" layoutY="77.0" prefHeight="360.0" prefWidth="455.0" style="-fx-background-color: black; -fx-text-fill: white;">
         <columns>
-            <TableColumn fx:id="nameColumn" text="Name" prefWidth="200.0" />
-            <TableColumn fx:id="usernameColumn" text="Username" minWidth="0.0" prefWidth="221.0" />
+            <TableColumn fx:id="nameColumn" prefWidth="225.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Name" />
+            <TableColumn fx:id="usernameColumn" minWidth="0.0" prefWidth="229.0" style="-fx-background-color: black;" text="Username" />
         </columns>
     </TableView>
 
-    <Button fx:id="addUserButton" layoutX="10.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleAddUser" text="Add User" />
-
-    <Button fx:id="deleteUserButton" layoutX="100.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleDeleteUser" text="Delete User" />
+    <Button fx:id="addUserButton" layoutX="200.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleAddUser" style="-fx-background-color: black;" text="Add User" textFill="WHITE" />
+    <Button fx:id="deleteUserButton" layoutX="465.0" layoutY="470.0" mnemonicParsing="false" onAction="#handleDeleteUser" style="-fx-background-color: black;" text="Delete User" textFill="WHITE" />
+   <Button fx:id="homeButton" layoutX="342.0" layoutY="470.0" mnemonicParsing="false" onAction="#homebutton" style="-fx-background-color: black;" text="Home" textFill="WHITE" />
 </AnchorPane>

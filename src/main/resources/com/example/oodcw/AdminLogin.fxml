@@ -5,12 +5,19 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="232.0" prefWidth="338.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.oodcw.AdminLogin">
+<AnchorPane prefHeight="425.0" prefWidth="338.0" styleClass="adminlogin" stylesheets="@css/Home.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodcw.AdminLogin">
     <children>
-        <Label layoutX="141.0" layoutY="25.0" text="Admin Login" />
-        <TextField fx:id="adminUsername" layoutX="100" layoutY="70" promptText="Username" />
-        <PasswordField fx:id="adminPassword" layoutX="100" layoutY="120" promptText="Password" />
-        <Button fx:id="loginButton" layoutX="150" layoutY="170" onAction="#handleAdminLogin" text="Login" />
+        <Label layoutX="105.0" layoutY="63.0" prefHeight="71.0" prefWidth="143.0" text="Admin Login" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font></Label>
+        <TextField fx:id="adminUsername" layoutX="94.0" layoutY="185.0" prefHeight="28.0" prefWidth="165.0" promptText="Username" />
+        <PasswordField fx:id="adminPassword" layoutX="94.0" layoutY="241.0" prefHeight="28.0" prefWidth="165.0" promptText="Password" />
+        <Button fx:id="loginButton" layoutX="142.0" layoutY="298.0" onAction="#handleAdminLogin" prefHeight="28.0" prefWidth="69.0" style="-fx-background-color: black;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font></Button>
     </children>
 </AnchorPane>

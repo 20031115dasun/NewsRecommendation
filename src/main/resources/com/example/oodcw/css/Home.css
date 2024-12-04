@@ -70,3 +70,21 @@
 
 }
 
+.adminlogin{
+    -fx-background-image: url("2.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
+
+
+.admindashboard{
+    -fx-background-image: url("3.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-font-family: 'Berlin Sans FB';
+
+}
