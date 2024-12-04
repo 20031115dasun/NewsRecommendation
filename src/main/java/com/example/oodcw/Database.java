@@ -213,4 +213,44 @@ public class Database {
         }
         return history;
     }
+
+    // Fetch all users from the database
+    public static List<List<String>> getAllUsers() {
+        List<List<String>> users = new ArrayList<>();
+        String query = "SELECT id, name, username FROM users";  // Query to fetch id, name, and username from users table
+
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                // Add each user as a list of attributes to the users list
+                List<String> user = new ArrayList<>();
+                user.add(String.valueOf(rs.getInt("id"))); // ID
+                user.add(rs.getString("name"));  // Name
+                user.add(rs.getString("username")); // Username
+                users.add(user);  // Add user data to the list
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to fetch all users.", e);
+        }
+        return users;
+    }
+
+    // Delete a user from the database
+    public static boolean deleteUser(int userId) {
+        String query = "DELETE FROM users WHERE id = ?";
+
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, userId);
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0; // Return true if a user was deleted
+        } catch (SQLException e) {
+            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to delete user.", e);
+        }
+        return false; // Return false if there's an error
+    }
+
+
+
 }
