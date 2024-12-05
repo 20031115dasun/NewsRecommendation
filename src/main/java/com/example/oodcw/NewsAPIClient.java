@@ -20,12 +20,10 @@ public class NewsAPIClient {
         String url = BASE_URL + "?category=" + category + "&apiKey=" + API_KEY;
 
         try {
-            // Make the API request
             String response = Request.get(url).execute().returnContent().asString();
 
             JSONObject jsonResponse = new JSONObject(response);
 
-            // Check if the status is OK
             if ("ok".equals(jsonResponse.optString("status"))) {
                 JSONArray articlesArray = jsonResponse.getJSONArray("articles");
 
@@ -54,7 +52,6 @@ public class NewsAPIClient {
         return articles;
     }
 
-    // Fetch general headlines (default category)
     public static List<Article> fetchGeneralHeadlines() {
         return fetchArticlesByCategory("general");
     }

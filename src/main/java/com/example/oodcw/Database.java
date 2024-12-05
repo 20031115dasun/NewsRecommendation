@@ -248,7 +248,7 @@ public class Database {
             e.printStackTrace();
             logger.log(Level.SEVERE, "Failed to delete user.", e);
         }
-        return false; // Return false if there's an error
+        return false;
     }
 
 
